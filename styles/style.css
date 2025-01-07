@@ -16,6 +16,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
 }
 
 h1,
@@ -48,4 +49,61 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+/*  */
+.content {
+  display: grid;
+  gap: 30px;
+  grid-template-areas: "result content__details";
+  align-content: center;
+  justify-content: center;
+  background-color: green;
+  min-width: 1140px;
+}
+
+.result {
+  grid-area: result;
+  align-self: end;
+  background-color: red;
+  
+}
+
+.result__video-container {
+  min-width: 711px;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  align-self: center;
+  flex-grow: 1;
+}
+
+.search-form__label {
+  flex-grow: 1;
+}
+
+.content__details {
+  height: 100%;
+  width: 100%;
+  grid-area: content__details;
+  background-color: red;
+}
+
+.content__list-container {
+  max-height: 298px;
+  overflow: scroll;
+}
+
+.title {
+  margin-bottom: 26px;
 }
