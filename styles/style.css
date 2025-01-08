@@ -186,6 +186,7 @@ ol {
   flex-direction: column;
   gap: 26px;
   grid-area: content__details;
+  margin-bottom: 6px;
 }
 
 /* Стили для заголовка */
