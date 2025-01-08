@@ -63,7 +63,9 @@ ol {
 
 .content {
   display: grid;
+  grid-template-columns: 711px auto;
   grid-template-areas: "result content__details";
+  align-content: end;
   gap: 30px;
   min-width: 1140px;
   margin: auto;
@@ -78,27 +80,29 @@ ol {
 
 .result__video-container {
   position: relative;
-  max-width: 711px;
+  width: 711px;
   height: 386px;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .result__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 /* Стили для формы поиска */
 
 .search-form {
+  max-width: 711px;
   display: flex;
   justify-content: start;
   gap: 40px;
+  padding-bottom: 7px;
 }
 
 .search-form__fieldset {
-  flex-grow: 1;
   border: none;
 }
 
@@ -111,6 +115,11 @@ ol {
 .search-form__label {
   display: flex;
   width: fit-content;
+  align-items: center;
+}
+
+.search-form__label-text {
+  display: block;
 }
 
 .search-form__textfield {
@@ -167,26 +176,26 @@ ol {
 
 .more-button {
   width: 100%;
-  margin-top: 30px;
+  margin: 30px 0 7px 0;
 }
 
 /* Секция content__details */
 
 .content__details {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
   grid-area: content__details;
-  align-self: end;
 }
 
 /* Стили для заголовка */
 
 .title {
-  margin-bottom: 26px;
   font-family: Oswald, sans-serif;
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .content__accent {
@@ -197,9 +206,8 @@ ol {
 
 .content__list-container {
   position: relative;
-  max-height: 298px;
+  height: 298px;
   overflow: auto;
-  overflow-x: hidden;
 }
 
 /* Стили для карточек */
@@ -225,27 +233,31 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
+  max-width: 196px;
 }
 
 .content__video-card-title {
-  max-width: 196px;
   font-family: Oswald, sans-serif;
+  line-height: 100%;
   font-size: 30px;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding-bottom: 5px;
 }
 
 .content__video-card-description {
   line-height: 16.2px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-line-clamp: 4; 
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
   overflow: hidden;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
+  height: 103px;
   object-fit: cover;
   object-position: center;
 }
@@ -259,8 +271,10 @@ ol {
 }
 
 .button:active,
-.content__card-link_current > .content__video-card {
+.search-form__checkbox-list > .search-form__label:active,
+.content__card-link_current:active > .content__video-card {
   background-color: #545050;
+  text-decoration: none;
 }
 
 .search-form__textfield:focus,
@@ -274,6 +288,7 @@ ol {
 .button:focus-visible,
 .content__card-link:focus-visible > .content__video-card {
   outline: 1px solid currentColor;
+  outline-offset: 1px;
 }
 
 .search-form__textfield,
