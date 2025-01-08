@@ -78,7 +78,7 @@ ol {
 
 .result__video-container {
   position: relative;
-  min-width: 711px;
+  max-width: 711px;
   height: 386px;
   margin-bottom: 16px;
   background-color: red;
@@ -153,7 +153,7 @@ ol {
 
 .button {
   border: 1px solid currentColor;
-  padding: 6px 73.5px;
+  padding: 6px 73px;
   color: currentColor;
   font-family: inherit;
   font-weight: bold;
