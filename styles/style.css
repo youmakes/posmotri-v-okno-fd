@@ -141,12 +141,16 @@ ol {
   height: 19px;
   margin-right: 5px;
   border: 1px solid #fff;
-  padding: 0;
+  padding-top: 1px;
 }
 
 .search-form__checkbox[type="checkbox"]:checked
   + .search-form__pseudo-checkbox::after {
-  content: url(../images/checkbox.svg);
+  /* content: url(../images/checkbox.svg); */
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: white;
 }
 
 /* Стили для кнопки */
