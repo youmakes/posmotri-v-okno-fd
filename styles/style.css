@@ -131,7 +131,7 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 5px;
+  gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
