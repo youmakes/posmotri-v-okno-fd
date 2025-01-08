@@ -123,13 +123,6 @@ ol {
   appearance: none;
 }
 
-.search-form__textfield:focus {
-  outline: none; 
-}
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid #FFF; 
-}
-
 /* Чекбокс */
 
 .search-form__checkbox-list {
@@ -151,16 +144,25 @@ ol {
   content: url(../images/checkbox.svg);
 }
 
-.search-form__label:focus  {
-  outline: none; 
-}
-
 /* Стили для кнопки */
 
 .button {
-  align-self: start;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 18px;
+  color: currentColor;
+  border: 1px solid currentColor;
+  padding: 6px 73.5px;
+  background-color: transparent;
+}
+.search-form__submit-button { 
+  align-self: end;
 }
 
+.more-button {
+  margin-top: 30px;
+  width: 100%;
+}
 
 /* Секция content__details */
 
@@ -195,6 +197,9 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+.content__list-item {
+  padding: 0px 3px;
 }
 
 .content__video-card {
@@ -231,5 +236,31 @@ ol {
 .content__video-card-description {
   line-height: 16.2px;
   text-overflow: ellipsis;
-
 }
+
+/* Стили для состояний */
+
+.button:hover,
+.search-form__checkbox-list > .search-form__label:hover,
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.button:active,
+.content__card-link_current > .content__video-card {
+  background-color: #545050;
+}
+
+.search-form__textfield:focus,
+.search-form__label:focus,
+.button:focus,
+.content__card-link:focus {
+  outline: none; 
+}
+
+.search-form__label:has(:focus-visible),
+.button:focus-visible,
+.content__card-link:focus-visible > .content__video-card {
+  outline: 1px solid #FFF; 
+}
+
