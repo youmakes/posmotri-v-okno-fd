@@ -81,7 +81,6 @@ ol {
   max-width: 711px;
   height: 386px;
   margin-bottom: 16px;
-  background-color: red;
 }
 
 .result__video {
@@ -117,10 +116,9 @@ ol {
 .search-form__textfield {
   min-width: 225px;
   border: none;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  opacity: 0.7;
-  color: #fff;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  color: currentColor;
   font-family: inherit;
   font-size: 18px;
   background-color: transparent;
@@ -140,17 +138,16 @@ ol {
   width: 19px;
   height: 19px;
   margin-right: 5px;
-  border: 1px solid #fff;
-  padding-top: 1px;
+  border: 1px solid currentColor;
+  padding: 1px;
 }
 
 .search-form__checkbox[type="checkbox"]:checked
   + .search-form__pseudo-checkbox::after {
-  /* content: url(../images/checkbox.svg); */
   content: '';
   width: 15px;
   height: 15px;
-  background-color: white;
+  background-color: currentColor;
 }
 
 /* Стили для кнопки */
@@ -201,9 +198,11 @@ ol {
 .content__list-container {
   position: relative;
   max-height: 298px;
-  overflow: scroll;
+  overflow: auto;
   overflow-x: hidden;
 }
+
+/* Стили для карточек */
 
 .content__list {
   display: flex;
@@ -214,24 +213,18 @@ ol {
   padding: 0px 3px;
 }
 
+.content__card-link {
+  color: currentColor;
+  text-decoration: none;
+}
+
 .content__video-card {
   display: flex;
   justify-content: space-between;
 }
 
-.content__video-card-thumbnail {
-  width: 194px;
-  object-fit: cover;
-  object-position: center;
-}
-
 .content__video-card-description-container {
   flex-grow: 1;
-}
-
-.content__card-link {
-  color: #fff;
-  text-decoration: none;
 }
 
 .content__video-card-title {
@@ -246,10 +239,15 @@ ol {
 
 .content__video-card-description {
   line-height: 16.2px;
-
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Стили для состояний */
@@ -275,7 +273,7 @@ ol {
 .search-form__label:has(:focus-visible),
 .button:focus-visible,
 .content__card-link:focus-visible > .content__video-card {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
 }
 
 .search-form__textfield,
