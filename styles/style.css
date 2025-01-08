@@ -78,8 +78,8 @@ ol {
 
 .result__video-container {
   position: relative;
-  max-width: 711px;
-  max-height: 386px;
+  min-width: 711px;
+  height: 386px;
   margin-bottom: 16px;
   background-color: red;
 }
