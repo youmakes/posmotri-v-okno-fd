@@ -213,7 +213,6 @@ ol {
 .content__video-card {
   display: flex;
   justify-content: space-between;
-  margin-right: 7px;
 }
 
 .content__video-card-thumbnail {
@@ -232,7 +231,7 @@ ol {
 }
 
 .content__video-card-title {
-  max-width: 199px;
+  max-width: 196px;
   font-family: Oswald, sans-serif;
   font-size: 30px;
   text-transform: uppercase;
