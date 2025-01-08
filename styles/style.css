@@ -51,7 +51,16 @@ ol {
   background-color: #D9D9D9;
 }
 
-/*  */
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .content {
   display: grid;
   gap: 30px;
@@ -77,16 +86,16 @@ ol {
   object-fit: cover;
 }
 
+/* Стили для формы поиска */
+
 .search-form {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  justify-content: start;
 }
 
-.button {
-  align-self: start;
-}
-
-.search-form__label {
+.search-form__fieldset {
+  border: none;
   flex-grow: 1;
 }
 
@@ -96,12 +105,71 @@ ol {
   padding-bottom: 5px;
 }
 
+.search-form__label {
+  display: flex;
+  width: fit-content;  
+}
+
+.search-form__textfield {
+  border: none;
+  width: 100%;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  background-color: transparent;
+  font-family: inherit;
+  color: #FFF;
+  font-size: 18px;
+  opacity: .7;
+  appearance: none;
+}
+
+.search-form__textfield:focus {
+  outline: none; 
+}
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFF; 
+}
+
+/* Чекбокс */
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 5px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #FFF;
+  margin-right: 5px;
+  padding: 0;
+}
+
+.search-form__checkbox[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
+  content: url(../images/checkbox.svg);
+}
+
+.search-form__label:focus  {
+  outline: none; 
+}
+
+/* Стили для кнопки */
+
+.button {
+  align-self: start;
+}
+
+
 /* Секция content__details */
 
 .content__details {
   grid-area: content__details;
   align-self: end;
 }
+
+/* Стили для заголовка */
 
 .title {
   font-family: Oswald, sans-serif;
@@ -115,9 +183,12 @@ ol {
   color: #545050;
 }
 
+/* Стили для блока со скролом */
+
 .content__list-container {
   max-height: 298px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .content__list {
@@ -129,17 +200,17 @@ ol {
 .content__video-card {
   display: flex;
   justify-content: space-between;
+  margin-right: 7px;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
   object-fit: cover;
   object-position: center;
-  margin-right: 2px;
 }
 
 .content__video-card-description-container {
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .content__card-link {
@@ -147,11 +218,14 @@ ol {
   color: #fff;
 }
 
-.content__video-card-title {
+.content__video-card-title { 
   font-family: Oswald, sans-serif;
   font-size: 30px;
   text-transform: uppercase;
+  width: fit-content;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
