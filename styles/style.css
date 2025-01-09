@@ -67,7 +67,7 @@ ol {
   grid-template-areas: "result content__details";
   align-content: end;
   gap: 30px;
-  max-width: 1140px;
+  width: 1140px;
   margin: auto;
 }
 
@@ -222,7 +222,7 @@ ol {
   gap: 30px;
 }
 .content__list-item {
-  padding: 0px 3px;
+  padding: 0px 2px;
 }
 
 .content__card-link {
