@@ -67,7 +67,7 @@ ol {
   grid-template-areas: "result content__details";
   align-content: end;
   gap: 30px;
-  min-width: 1140px;
+  max-width: 1140px;
   margin: auto;
 }
 
@@ -127,11 +127,14 @@ ol {
   border: none;
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   color: currentColor;
   font-family: inherit;
   font-size: 18px;
   background-color: transparent;
   appearance: none;
+
 }
 
 /* Чекбокс */
@@ -223,8 +226,13 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: currentColor;
   text-decoration: none;
+}
+.content__card-link_current {
+  display: block;
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -272,10 +280,17 @@ ol {
 }
 
 .button:active,
-.search-form__checkbox-list > .search-form__label:active,
-.content__card-link_current:active > .content__video-card {
+.content__card-link:active {
   text-decoration: none;
   background-color: #545050;
+}
+.search-form__checkbox-list > .search-form__label:active {
+  text-decoration: none;
+}
+
+.search-form__textfield:active {
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
 }
 
 .search-form__textfield:focus,
